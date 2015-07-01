@@ -4,9 +4,9 @@ open Fake
 
 RestorePackages()
 
-Target "Hello" (fun _ ->
+Target "Hello" <| fun _ ->
   environVarOrDefault "USERNAME" "world"
     |> tracefn "Hello, %s!"
-)
+
 
 RunTargetOrDefault "Hello"
